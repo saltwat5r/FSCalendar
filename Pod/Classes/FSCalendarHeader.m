@@ -101,7 +101,7 @@
     FSCalendarHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.titleLabel.font = _appearance.headerTitleFont;
     cell.titleLabel.textColor = _appearance.headerTitleColor;
-    [_dateFormatter setLocalizedDateFormatFromTemplate:_appearance.headerDateFormat];   //.dateFormat = _appearance.headerDateFormat;
+    [_dateFormatter [NSDateFormatter dateFormatFromTemplate:@"MMMM yyyy" options:0 locale:[NSLocale currentLocale]]]; //setLocalizedDateFormatFromTemplate:_appearance.headerDateFormat];   //.dateFormat = _appearance.headerDateFormat;
     if (_scrollDirection == UICollectionViewScrollDirectionHorizontal) {
         // 多出的两项需要制空
         if ((indexPath.item == 0 || indexPath.item == [collectionView numberOfItemsInSection:0] - 1 )) {
